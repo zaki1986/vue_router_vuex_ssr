@@ -22,8 +22,8 @@ const config = {
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
-      exclude: __dirname + 'node_modules',
-      include: __dirname + 'src',
+      exclude: path.join(__dirname, 'node_modules'),
+      include: path.join(__dirname, 'src'),
       options: {
         presets: ['env']
       }
@@ -73,7 +73,7 @@ if (isDev) {
     hot: true
   }
 } else {
-  config.output.filename = '[name].[chunkhash:8].js';
+  config.output.filename = '[name].[chunkhash:8].js'
   config.module.rules.push({
     test: /\.styl/,
     use: [{
@@ -82,8 +82,8 @@ if (isDev) {
           // you can specify a publicPath here
           // by default it uses publicPath in webpackOptions.output
           publicPath: './',
-          hmr: process.env.NODE_ENV === 'production',
-        },
+          hmr: process.env.NODE_ENV === 'production'
+        }
       },
       'css-loader',
       {

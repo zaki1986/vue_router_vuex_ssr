@@ -1,10 +1,10 @@
-const webpack = require('webpack');
-const HTMLPlugin = require('html-webpack-plugin');
-const merge = require('webpack-merge');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const baseConfig = require('./webpack.config.base');
+const webpack = require('webpack')
+const HTMLPlugin = require('html-webpack-plugin')
+const merge = require('webpack-merge')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const baseConfig = require('./webpack.config.base')
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = process.env.NODE_ENV === 'development'
 
 let config
 
@@ -63,8 +63,8 @@ if (isDev) {
             loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: './',
-              hmr: process.env.NODE_ENV === 'production',
-            },
+              hmr: process.env.NODE_ENV === 'production'
+            }
           },
           'css-loader',
           {
@@ -95,4 +95,4 @@ if (isDev) {
   })
 }
 
-module.exports = config;
+module.exports = config

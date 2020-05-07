@@ -29,8 +29,8 @@ const config = {
       }, {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: __dirname + 'node_modules',
-        include: __dirname + 'client',
+        exclude: path.join(__dirname, 'node_modules'),
+        include: path.join(__dirname, 'client'),
         options: {
           presets: ['env']
         }
