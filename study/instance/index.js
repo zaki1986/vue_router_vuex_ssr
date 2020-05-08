@@ -3,15 +3,20 @@ import Vue from 'vue'
 const app = new Vue({
   // el: '#root',
   data: {
-    text: 0
+    text: 0,
+    obj: {}
   },
-  template: '<div>{{text}}</div>'
+  template: '<div>{{text}} {{obj.a}}</div>'
 })
 
 app.$mount('#root')
 
+let i = 0
 setInterval(() => {
-  app.text += 1
+  // app.text += 1
+  i++
+  app.$set(app.obj, 'a', i)
+  app.obj.a = i
 }, 1000)
 
 // console.log(app.$data) // 实例的数据
@@ -29,3 +34,19 @@ setInterval(() => {
 // console.log(app.$scopedSlots) // 实例的独有插槽
 // console.log(app.$refs) // 定位指定项
 // console.log(app.$isServer) // 判断是不是服务端
+
+// app.$watch('text', (newText, oldText) => {
+//   console.log(`${oldText} : ${newText}`)
+// })
+
+// app.$on('text', (a, b) => {
+//   console.log(`test emited ${a} : ${b}`)
+// })
+
+// app.$once('text', (a, b) => {
+//   console.log(`test emited ${a} : ${b}`)
+// }) // 只接收一次
+
+// setInterval(() => {
+//   app.$emit('text', 1, 2)
+// }, 1000)
