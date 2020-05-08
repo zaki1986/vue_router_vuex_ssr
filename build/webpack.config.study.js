@@ -25,7 +25,7 @@ const defaultPlugins = [
 ]
 
 const config = merge(baseConfig, {
-  entry: path.join(__dirname, '../practice/index.js'),
+  entry: path.join(__dirname, '../study/index.js'),
   module: {
     rules: [{
       test: /\.styl/,
